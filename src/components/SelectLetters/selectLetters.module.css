@@ -1,0 +1,54 @@
+.select-letters {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  font-family: Itim;
+  font-size: 18px;
+  column-gap: 12px;
+  margin-top: 40px;
+}
+
+.container > div:first-child {
+  background-color: #ffffff98 !important ;
+  height: 70px !important;
+  border-radius: 8px;
+}
+.letter {
+  display: flex;
+  flex-direction: column;
+  width: 55px;
+  height: 55px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.text {
+  flex: 1;
+  line-height: 27px;
+  padding-top: 6px;
+}
+.letter-bottom {
+  border-top: 1px solid #000;
+  align-self: stretch;
+  padding-left: 8px;
+  font-size: 10px;
+
+  display: flex;
+  justify-content: space-between;
+}
+.letter-score{
+   padding: 2px 0;
+}
+.letter-multiplier{
+   padding: 2px 0;
+   align-self: stretch;
+   padding-left: 4px;
+   padding-right: 4px;
+   background-color: rgba(255, 179, 0, 0.904);
+   text-align: center;
+   border-top: 1px solid #ffffff98;
+   border-left: 1px solid #ffffff98;
+   border-bottom-right-radius: 8px;
+   border-top-left-radius: 4px;
+}

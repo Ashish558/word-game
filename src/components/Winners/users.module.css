@@ -1,0 +1,8 @@
+.container{
+   display: flex;
+   column-gap: 20px;
+   flex-direction: column;
+   row-gap: 24px;
+   min-width: 400px;
+   align-items: center;
+}

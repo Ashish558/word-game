@@ -1,25 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import GameProvider from "./providers/Provider";
+import styles from "./app.module.css";
+import Button from "./components/button/button";
+import Game from "./game/game";
+import StartGame from "./components/StartGame/StartGame";
+import Socket from "./utils/Socket";
+import Home from "./pages/Home";
 
 function App() {
+  const [gameStarted, setGameStarted] = useState<boolean>(false);
+  const [username, setUsername] = useState<string>("");
+
+  const handleStart = () => {
+    setGameStarted(true);
+    console.log('username', username);
+    Socket.initializeSocket(username)
+  }
+
+  if (gameStarted === false) {
+    return (
+      <StartGame
+        handleStart={handleStart}
+        setUsername={setUsername}
+      />
+    );
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <GameProvider username={username}>
+      <Home />
+    </GameProvider>
   );
 }
 
